@@ -1,0 +1,52 @@
+{
+  "kind": "singleType",
+  "collectionName": "maskulins",
+  "info": {
+    "singularName": "maskulin",
+    "pluralName": "maskulins",
+    "displayName": "maskulin"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "Mobile": {
+      "type": "string"
+    },
+    "Whatsapp": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "string"
+    },
+    "LinkedIn": {
+      "type": "string"
+    },
+    "Company": {
+      "type": "string"
+    },
+    "Products": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "About": {
+      "type": "richtext"
+    },
+    "Instagram": {
+      "type": "media",
+      "multiple": true,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Address": {
+      "type": "string"
+    }
+  }
+}
