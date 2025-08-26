@@ -14,16 +14,19 @@
     "Logo": {
       "type": "media",
       "multiple": false,
+      "required": true,
       "allowedTypes": [
         "images",
         "files"
       ]
     },
     "Name": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Position": {
-      "type": "string"
+      "type": "string",
+      "required": true
     },
     "Mobile": {
       "type": "string"
