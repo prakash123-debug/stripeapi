@@ -11,6 +11,20 @@
   },
   "pluginOptions": {},
   "attributes": {
+    "Logo": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files"
+      ]
+    },
+    "Name": {
+      "type": "string"
+    },
+    "Position": {
+      "type": "string"
+    },
     "Mobile": {
       "type": "string"
     },

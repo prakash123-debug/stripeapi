@@ -399,7 +399,10 @@ export interface ApiMaskulinMaskulin extends Struct.SingleTypeSchema {
       'api::maskulin.maskulin'
     > &
       Schema.Attribute.Private;
+    Logo: Schema.Attribute.Media<'images' | 'files'>;
     Mobile: Schema.Attribute.String;
+    Name: Schema.Attribute.String;
+    Position: Schema.Attribute.String;
     Products: Schema.Attribute.Media<'images' | 'files', true>;
     publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
