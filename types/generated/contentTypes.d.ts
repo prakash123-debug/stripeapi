@@ -373,72 +373,54 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiContactContact extends Struct.CollectionTypeSchema {
-  collectionName: 'contacts';
+export interface ApiContactUserContactUser extends Struct.CollectionTypeSchema {
+  collectionName: 'contact_users';
   info: {
-    displayName: 'contact';
-    pluralName: 'contacts';
-    singularName: 'contact';
+    displayName: 'Contact User';
+    pluralName: 'contact-users';
+    singularName: 'contact-user';
   };
   options: {
     draftAndPublish: true;
   };
   attributes: {
-    createdAt: Schema.Attribute.DateTime;
-    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-    Email: Schema.Attribute.String;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
-    localizations: Schema.Attribute.Relation<
-      'oneToMany',
-      'api::contact.contact'
-    > &
-      Schema.Attribute.Private;
-    Name: Schema.Attribute.String;
-    Photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    publishedAt: Schema.Attribute.DateTime;
-    updatedAt: Schema.Attribute.DateTime;
-    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
-      Schema.Attribute.Private;
-  };
-}
-
-export interface ApiMaskulinMaskulin extends Struct.SingleTypeSchema {
-  collectionName: 'maskulins';
-  info: {
-    displayName: 'maskulin';
-    pluralName: 'maskulins';
-    singularName: 'maskulin';
-  };
-  options: {
-    draftAndPublish: false;
-  };
-  attributes: {
     About: Schema.Attribute.RichText;
-    Address: Schema.Attribute.String;
+    Address: Schema.Attribute.Text;
     Company: Schema.Attribute.String;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     Email: Schema.Attribute.String;
-    Instagram: Schema.Attribute.Media<'images' | 'files', true>;
+    Instagram: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    InstagramUrl: Schema.Attribute.String;
     LinkedIn: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::maskulin.maskulin'
+      'api::contact-user.contact-user'
     > &
       Schema.Attribute.Private;
-    Logo: Schema.Attribute.Media<'images' | 'files'> &
+    Logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
       Schema.Attribute.Required;
     Mobile: Schema.Attribute.String;
     Name: Schema.Attribute.String & Schema.Attribute.Required;
     Position: Schema.Attribute.String & Schema.Attribute.Required;
-    Products: Schema.Attribute.Media<'images' | 'files', true>;
+    Products: Schema.Attribute.Media<
+      'images' | 'files' | 'videos' | 'audios',
+      true
+    >;
+    ProductsUrl: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
+    StoreUrl: Schema.Attribute.String;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    UserName: Schema.Attribute.String &
+      Schema.Attribute.Required &
+      Schema.Attribute.Unique;
     Whatsapp: Schema.Attribute.String;
   };
 }
@@ -952,8 +934,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
-      'api::contact.contact': ApiContactContact;
-      'api::maskulin.maskulin': ApiMaskulinMaskulin;
+      'api::contact-user.contact-user': ApiContactUserContactUser;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

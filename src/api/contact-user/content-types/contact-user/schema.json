@@ -1,13 +1,13 @@
 {
-  "kind": "singleType",
-  "collectionName": "maskulins",
+  "kind": "collectionType",
+  "collectionName": "contact_users",
   "info": {
-    "singularName": "maskulin",
-    "pluralName": "maskulins",
-    "displayName": "maskulin"
+    "singularName": "contact-user",
+    "pluralName": "contact-users",
+    "displayName": "Contact User"
   },
   "options": {
-    "draftAndPublish": false
+    "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
@@ -17,12 +17,29 @@
       "required": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos",
+        "audios"
       ]
     },
     "Name": {
       "type": "string",
-      "required": true
+      "required": true,
+      "unique": false
+    },
+    "UserName": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "StoreUrl": {
+      "type": "string"
+    },
+    "InstagramUrl": {
+      "type": "string"
+    },
+    "ProductsUrl": {
+      "type": "string"
     },
     "Position": {
       "type": "string",
@@ -30,6 +47,9 @@
     },
     "Mobile": {
       "type": "string"
+    },
+    "About": {
+      "type": "richtext"
     },
     "Whatsapp": {
       "type": "string"
@@ -48,22 +68,23 @@
       "multiple": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos",
+        "audios"
       ]
-    },
-    "About": {
-      "type": "richtext"
     },
     "Instagram": {
       "type": "media",
       "multiple": true,
       "allowedTypes": [
         "images",
-        "files"
+        "files",
+        "videos",
+        "audios"
       ]
     },
     "Address": {
-      "type": "string"
+      "type": "text"
     }
   }
 }
